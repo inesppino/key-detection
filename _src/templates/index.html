@@ -6,7 +6,18 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+  <h1>KONEMI CODE</h1>
 <script>
+  const pressed = [];
+  const secretCode = 'pepino';
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length -1, pressed.length - secretCode.length); //queremos coger las ultimas seis letras que se hayan incluido en el array
+    if(pressed.join('').includes(secretCode)){
+      alert('hurray');
+      cornify_add();
+    }
+  })
 </script>
 </body>
 </html>
